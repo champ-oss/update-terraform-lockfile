@@ -13,7 +13,7 @@ jobs:
       with:
         fetch-depth: 0
 
-    - uses: actions/setup-go@v2
+    - uses: actions/setup-go@v3
       with:
         go-version: 1.17
 
@@ -40,7 +40,7 @@ jobs:
       run: |
             pct=`go tool cover -func=cover.out | grep total | grep -Eo '[0-9]+\.[0-9]+'`
             echo "Current test coverage : $pct %"
-            if (( $(echo "$pct $MIN" | awk '{print ($1 > $2)}') )); then
+            if (( $(echo "$pct $MIN" | awk '{print ($1 >= $2)}') )); then
                 echo "OK"
             else
                 echo "Current test coverage is below threshold of $MIN percent"
