@@ -3,7 +3,7 @@ module github.com/champ-oss/update-terraform-lockfile
 go 1.17
 
 require (
-	github.com/champ-oss/file-sync v1.0.26-5966a90
+	github.com/champ-oss/file-sync v1.0.38-4c6c2aa
 	github.com/sirupsen/logrus v1.9.0
 )
 
