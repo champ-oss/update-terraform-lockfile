@@ -1,3 +1,5 @@
+name: update-terraform-lockfile
+
 on:
   workflow_dispatch:
   push:
@@ -5,16 +7,30 @@ on:
    - cron: "0 4 * * *"
 
 jobs:
-  sync:
+  root-folder:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-      - uses: hashicorp/setup-terraform@v2.0.0
+      - uses: hashicorp/setup-terraform@v2.0.2
         with:
           terraform_version: 1.1.4
           terraform_wrapper: false
-      - uses: champ-oss/update-terraform-lockfile@e9d76db17ee9e148d4d13658ca12e6930dd81094
+      - uses: champ-oss/update-terraform-lockfile@66c4fb7ace109a11aab137fa17fc820c3ae19ce8
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
+  test-folder:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: hashicorp/setup-terraform@v2.0.2
+        with:
+          terraform_version: 1.1.4
+          terraform_wrapper: false
+      - uses: champ-oss/update-terraform-lockfile@66c4fb7ace109a11aab137fa17fc820c3ae19ce8
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          working-directory: test
