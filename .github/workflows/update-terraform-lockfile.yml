@@ -9,6 +9,10 @@ on:
 jobs:
   root-folder:
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
+      pull-requests: write
     steps:
       - uses: actions/checkout@v4
         with:
@@ -22,6 +26,10 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
   test-folder:
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
+      pull-requests: write
     steps:
       - uses: actions/checkout@v4
         with:
