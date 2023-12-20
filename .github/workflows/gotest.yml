@@ -13,7 +13,7 @@ jobs:
       with:
         fetch-depth: 0
 
-    - uses: actions/setup-go@v3
+    - uses: actions/setup-go@v5
       with:
         go-version: 1.17
 
@@ -24,7 +24,7 @@ jobs:
       run: gotestsum --junitfile report.xml -- -coverprofile=cover.out ./...
 
     - name: Publish Unit Test Results
-      uses: dorny/test-reporter@v1.6.0
+      uses: dorny/test-reporter@v1.7.0
       if: always()
       with:
         name: gotest
