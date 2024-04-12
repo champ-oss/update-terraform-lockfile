@@ -2,6 +2,9 @@
 
 A GitHub Action which updates the Terraform lockfile
 
+*Note: This project has been deprecated and will no longer be maintained since Dependabot now updates Terraform lockfiles.*
+https://docs.github.com/en/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file#terraform
+
 [![.github/workflows/gotest.yml](https://github.com/champ-oss/update-terraform-lockfile/actions/workflows/gotest.yml/badge.svg?branch=main)](https://github.com/champ-oss/update-terraform-lockfile/actions/workflows/gotest.yml)
 [![.github/workflows/golint.yml](https://github.com/champ-oss/update-terraform-lockfile/actions/workflows/golint.yml/badge.svg?branch=main)](https://github.com/champ-oss/update-terraform-lockfile/actions/workflows/golint.yml)
 [![.github/workflows/release.yml](https://github.com/champ-oss/update-terraform-lockfile/actions/workflows/release.yml/badge.svg)](https://github.com/champ-oss/update-terraform-lockfile/actions/workflows/release.yml)
